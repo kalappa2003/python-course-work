@@ -5,51 +5,53 @@ var=lambda arg: expr
 var(arg)
 '''
 
-#Squares
+# Squares
 def squares(n):
     print(n*n)
 squares(3)
 squares(5)
-squares_lambda=lambda n: n*n
-print("squares_lambda:",squares_lambda(5))
-print("squares_lambda:",squares_lambda(52))
+squares_lambda = lambda n: n*n
+print("squares_lambda:", squares_lambda(5))
+print("squares_lambda:", squares_lambda(52))
 
-#EvenOrOdd
+# EvenOrOdd
 def evenorodd(n):
-evenorodd_lambda=lambda n: "Even" if n%2==0 else "Odd"
-print("evenorodd_lambda",evenorodd_lambda(4))
-print("evenorodd_lambda",evenorodd_lambda(43))
+    return "Even" if n % 2 == 0 else "Odd"   # <-- FIXED: added indented body
 
-#Vowels
-v='aeiou'
-squl_lambda=list(map(lambda i:'*' if i in v else i, 'python'))
-print("squl_lambda",''.join(squl_lambda))
+evenorodd_lambda = lambda n: "Even" if n % 2 == 0 else "Odd"
+print("evenorodd_lambda", evenorodd_lambda(4))
+print("evenorodd_lambda", evenorodd_lambda(43))
 
-#Maximum of two numbers
-maxnum=lambda a,b: a if a>b else b
-print(maxnum(34,56))
-print(maxnum(45,5))
+# Vowels
+v = 'aeiou'
+squl_lambda = list(map(lambda i: '*' if i in v else i, 'python'))
+print("squl_lambda", ''.join(squl_lambda))
 
-#Multiply two numbers
-mulnum=lambda a,b: a*b
-print(mulnum(34,56))
-print(mulnum(4,5))
+# Maximum of two numbers
+maxnum = lambda a, b: a if a > b else b
+print(maxnum(34, 56))
+print(maxnum(45, 5))
 
-#Sort a list of tuple by second element
-s=sorted([(1,3,9),(2,1,7),(4,2,6)],key=lambda i:i[2])
+# Multiply two numbers
+mulnum = lambda a, b: a*b
+print(mulnum(34, 56))
+print(mulnum(4, 5))
+
+# Sort a list of tuple by third element
+s = sorted([(1, 3, 9), (2, 1, 7), (4, 2, 6)], key=lambda i: i[2])
 print(s)
 
-#Sorting a list
-l=["Tarit","Harshith","Varun","Kiran"]
-s=sorted(l,key=lambda i:i[-1])
+# Sorting a list
+l = ["Tarit", "Harshith", "Varun", "Kiran"]
+s = sorted(l, key=lambda i: i[-1])
 print(s)
 
-#Removing 0 using filter&lambda
-l=[1,2,0,0,0,0,3,0,4,0,0,0,5,6]
-e=list(filter(lambda i:i!=0, l))
+# Removing 0 using filter & lambda
+l = [1, 2, 0, 0, 0, 0, 3, 0, 4, 0, 0, 0, 5, 6]
+e = list(filter(lambda i: i != 0, l))
 print(e)
 
-#Filter
+# Filter
 data = {
     'laptopA': {'available': True, 'price': 40000, 'color': 'Green'},
     'laptopB': {'available': False, 'price': 35700, 'color': 'Black'},
